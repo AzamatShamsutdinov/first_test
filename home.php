@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отопление и климат</title>
+</head>
+<body>
+<div class="jMtym9" data-qa="header">
+    <div class="ppkRng main-container">
+        <!-- ИСПРАВЛЕНО: заменил <div href="false"> на <a> с корректным href -->
+        <a href="/" class="logo-link">
+            <img src="https://cdn.vseinstrumenti.ru/sv3/_main-page/logo-filled.BL8hYRsI.svg?data" class="_5jy01q" loading="eager" alt="Отопление и климат">
+        </a>
+        <div class="swVQ0Q">
+            <!-- ИСПРАВЛЕНО: добавил префикс data- к нестандартному атрибуту -->
+            <div class="lyIRsW" data-is-header-sticky="false">
+                <button class="_base-button_zbos0_8 _-large_zbos0_359 _-filled_zbos0_61 _-full-width_zbos0_33 _-icon_zbos0_55 Xb6nO6" data-qa="catalog-button">
+                    <!---->
+                    <span class="_button-icon_zbos0_49">
+                        <!--[-->
+                        <i class="_vi-icon_su8nu_8 vi-icon-menu _3YBU77" style="font-size:20px;" data-qa="catalog-icon"></i>
+                        <!--]-->
+                    </span>
+                    <span class="_label_zbos0_27">
+                        <!--[--> Каталог <!--]-->
+                    </span>
+                </button>
+                <!-- ИСПРАВЛЕНО: добавил префикс data- к нестандартному атрибуту -->
+                <div class="_1Vy3DY" data-qa="catalog" data-is-new-header="">
+                    <!--noindex-->
+                    <div class="_1-QKZt">
+                        <div class="_custom-scroll_rv8e1_8 AEpfPH" style="max-height:none;">
+                            <!--[-->
+                            <ul data-qa="topic-list">
+                                <!--[-->
+                                <?php
+                                // Получаем категории из WordPress
+                                $categories = get_terms(array(
+                                    'taxonomy' => 'product_cat', // Для WooCommerce
+                                    'hide_empty' => false,
+                                    'parent' => 0, // Только родительские категории
+                                ));
+                                
+                                // Если категории не найдены, используем стандартные
+                                if (empty($categories)) {
+                                    $categories = array(
+                                        (object)array('term_id' => 1, 'name' => 'Отопление'),
+                                        (object)array('term_id' => 2, 'name' => 'Электрика и свет'),
+                                        (object)array('term_id' => 3, 'name' => 'Котлы и печи'),
+                                        (object)array('term_id' => 4, 'name' => 'Радиаторы'),
+                                        (object)array('term_id' => 5, 'name' => 'Теплые полы'),
+                                        (object)array('term_id' => 6, 'name' => 'Термостаты'),
+                                        (object)array('term_id' => 7, 'name' => 'Трубы и фитинги'),
+                                        (object)array('term_id' => 8, 'name' => 'Насосы'),
+                                        (object)array('term_id' => 9, 'name' => 'Вентиляция'),
+                                        (object)array('term_id' => 10, 'name' => 'Кондиционеры'),
+                                        (object)array('term_id' => 11, 'name' => 'Обогреватели'),
+                                        (object)array('term_id' => 12, 'name' => 'Климат-контроль'),
+                                        (object)array('term_id' => 13, 'name' => 'Изоляция'),
+                                        (object)array('term_id' => 14, 'name' => 'Аксессуары для отопления'),
+                                    );
+                                }
+                                
+                                $icon_id = 12;
+                                foreach ($categories as $category) :
+                                    $category_link = get_term_link($category);
+                                ?>
+                                <li class="KfcaCL" data-qa="topic-item">
+                                    <a href="<?php echo esc_url($category_link); ?>" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                                        <div class="_9OjAW7">
+                                            <svg class="_svg-icon_1usy7_8 -MT9od" style="font-size:20px;">
+                                                <use xlink:href="#catalog-<?php echo $icon_id; ?>"></use>
+                                            </svg>
+                                        </div>
+                                        <!--[--><?php echo esc_html($category->name); ?><!--]-->
+                                        <i class="_vi-icon_su8nu_8 vi-icon-arrow-right awIVOy" style="font-size:16px;"></i>
+                                    </a>
+                                </li>
+                                <?php 
+                                    $icon_id++;
+                                endforeach; 
+                                ?>
+                                <!--]-->
+                            </ul>
+                            <!--]-->
+                        </div>
+                        <div class="_48gduC" style="display:none;"></div>
+                        <div class="_custom-scroll_rv8e1_8 lFD7xo" style="max-height:none;display:none;">
+                            <!--[-->
+                            <div class="otMaxg">
+                                <!--[--><!--]--><!----><!---->
+                            </div>
+                            <!--]-->
+                        </div>
+                    </div>
+                    <!--/noindex-->
+                </div>
+            </div>
+            <div class="zuw3G3">
+                <div class="d6N-Rk _base-input_1u8it_8 _-no-borders_1u8it_220">
+                    <label class="_label_1u8it_18">
+                        <!--[-->
+                        <input data-qa="header-search-input" value="" type="text" placeholder="Товары для уюта и тепла" autocomplete="off" class="_field_1u8it_23">
+                        <!--]--><!---->
+                        <span class="_field-outline_1u8it_62"></span>
+                        <!---->
+                    </label>
+                    <!----><!----><!---->
+                </div>
+                <button class="_base-button_zbos0_8 _-large_zbos0_359 _-filled_zbos0_61 _-icon_zbos0_55 wVtNQd" data-qa="header-search-button">
+                    <!---->
+                    <span class="_button-icon_zbos0_49">
+                        <!--[-->
+                        <i class="_vi-icon_su8nu_8 vi-icon-search zgbpH4" style="font-size:24px;"></i>
+                        <!--]-->
+                    </span>
+                    <!---->
+                </button>
+                <!---->
+            </div>
+        </div>
+        <div class="_8n-Ibw">
+            <div>
+                <a class="aHrd-R base-link -clean _8R37cX" href="/user/favorites/" data-qa="favorites" rel="nofollow">
+                    <!---->
+                    <i class="_vi-icon_su8nu_8 vi-icon-heart-outline HHyJl0" style="font-size: 24px;"></i>
+                    <p class="_typography_fsyzi_47 _text_fsyzi_54 _v5_fsyzi_31 _-no-margin_fsyzi_50 _0FnZm-">Избранное</p>
+                </a>
+                <div class="_tooltip_3i352_8 _-bottom_3i352_54 _-dark_3i352_18 _-has-close_3i352_144" data-tooltip="wrapper" style="width: 320px; --vi-tooltip-arrow-height: 12px; --vi-tooltip-arrow-slide-shift: 16px; --vi-tooltip-offset: 4px; display: none; z-index: 100;">
+                    <a class="_tooltip-close_3i352_28" href="#" data-tooltip="close">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="_svg-icon_1usy7_8" style="font-size: 24px;">
+                            <path d="m11.575 13.4-4.9 4.9a.948.948 0 0 1-.7.275.948.948 0 0 1-.7-.275.948.948 0 0 1-.275-.7.95.95 0 0 1 .275-.7l4.9-4.9-4.9-4.9A.948.948 0 0 1 5 6.4a.95.95 0 0 1 .275-.7.948.948 0 0 1 .7-.275.95.95 0 0 1 .7.275l4.9 4.9 4.9-4.9a.948.948 0 0 1 .7-.275.95.95 0 0 1 .7.275.948.948 0 0 1 .275.7.948.948 0 0 1-.275.7l-4.9 4.9 4.9 4.9a.949.949 0 0 1 .275.7.948.948 0 0 1-.275.7.948.948 0 0 1-.7.275.948.948 0 0 1-.7-.275l-4.9-4.9Z"></path>
+                        </svg>
+                    </a>
+                    <svg class="_tooltip-arrow_3i352_25" width="28" height="12" viewBox="0 0 28 12" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m16.9 10.6 8.2-9.2C25.9.4 26.9 0 28 0H0c1 0 2.1.5 2.9 1.4l8.2 9.2a3.8 3.8 0 0 0 5.8 0Z"></path>
+                    </svg>
+                    <!---->
+                    <div>
+                        <p class="_typography_fsyzi_47 _heading_fsyzi_8 _v6_fsyzi_36 _-no-margin_fsyzi_50 hu62Y4">Вы не авторизованы</p>
+                        <p class="_typography_fsyzi_47 _text_fsyzi_54 _v2_fsyzi_16 _-no-margin_fsyzi_50 _0UU-Rp">Войдите в аккаунт, чтобы не потерять ваши избранные товары</p>
+                        <button class="_base-button_zbos0_8 _-primary_zbos0_61 _-filled_zbos0_61 Cx8jGP">
+                            <!----><!---->
+                            <span class="_label_zbos0_27">Войти</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- ИСПРАВЛЕНО: добавил префикс data- к нестандартному атрибуту -->
+            <div data-modelvalue="false" class="_8R37cX">
+                <!--[-->
+                <a class="aHrd-R base-link -clean" href="/compare/" data-qa="compare" rel="nofollow">
+                    <!---->
+                    <i class="_vi-icon_su8nu_8 vi-icon-comparison-slim HHyJl0" style="font-size:24px;"></i>
+                    <p class="_typography_fsyzi_47 _text_fsyzi_54 _v5_fsyzi_31 _-no-margin_fsyzi_50 _0FnZm-">
+                        <!--[-->Сравнение<!--]-->
+                    </p>
+                    <!--[--><!--]-->
+                </a>
+                <!--]-->
+                <div class="_tooltip_3i352_8 _-bottom_3i352_54" data-tooltip="wrapper" style="width: 404px; --vi-tooltip-arrow-height: 12px; --vi-tooltip-arrow-slide-shift: 16px; --vi-tooltip-offset: 4px; display: none;">
+                    <!---->
+                    <svg class="_tooltip-arrow_3i352_25" width="28" height="12" viewBox="0 0 28 12" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m16.9 10.6 8.2-9.2C25.9.4 26.9 0 28 0H0c1 0 2.1.5 2.9 1.4l8.2 9.2a3.8 3.8 0 0 0 5.8 0Z"></path>
+                    </svg>
+                    <div class="_custom-scroll_rv8e1_8" data-qa="compare-preview-items" style="max-height: 312px;">
+                        <div class="_5WX515">В сравнении пока ничего нет</div>
+                    </div>
+                    <!---->
+                </div>
+            </div>
+            <!--[-->
+            <a class="aHrd-R base-link -clean _8R37cX" href="/user/orders/all/" data-qa="orders" rel="nofollow">
+                <!---->
+                <i class="_vi-icon_su8nu_8 vi-icon-orders HHyJl0" style="font-size:24px;"></i>
+                <p class="_typography_fsyzi_47 _text_fsyzi_54 _v5_fsyzi_31 _-no-margin_fsyzi_50 _0FnZm-">
+                    <!--[-->Заказы<!--]-->
+                </p>
+                <!--[--><!--]-->
+            </a>
+            <!----><!--]-->
+            <a class="aHrd-R base-link -clean _8R37cX" href="/cart-checkout/" data-qa="cart" rel="nofollow">
+                <!---->
+                <i class="_vi-icon_su8nu_8 vi-icon-cart-outline HHyJl0" style="font-size:24px;"></i>
+                <p class="_typography_fsyzi_47 _text_fsyzi_54 _v5_fsyzi_31 _-no-margin_fsyzi_50 _0FnZm-">
+                    <!--[-->Корзина<!--]-->
+                </p>
+                <!--[--><!--]-->
+            </a>
+        </div>
+        <div class="a2IXCg">
+            <div class="_dropdown_1e9wp_8 _-right_1e9wp_28 _-has-arrow_1e9wp_15" data-qa="motivation-menu">
+                <div class="_trigger_1e9wp_37">
+                    <!--[-->
+                    <button class="_base-button_zbos0_8 _-large_zbos0_359 _-secondary_zbos0_70 _-filled_zbos0_61" data-qa="login-and-registration">
+                        <!----><!---->
+                        <span class="_label_zbos0_27">
+                            <!--[--> Войти <!--]-->
+                        </span>
+                    </button>
+                    <!--]-->
+                </div>
+                <div class="_drop-content_1e9wp_21" style="display:none;">
+                    <div class="_drop-list-wrapper_1e9wp_12">
+                        <!--[--><!--]--><!----><!--[-->
+                        <div class="cQUVFp">
+                            <p class="_typography_fsyzi_47 _heading_fsyzi_8 _v5_fsyzi_31">Войдите в профиль</p>
+                            <p class="_typography_fsyzi_47 _text_fsyzi_54 _v2_fsyzi_16">Вы сможете отслеживать статусы заказов и получать персональные предложения</p>
+                            <button class="_base-button_zbos0_8 _-primary_zbos0_61 _-filled_zbos0_61 _36UVuE" data-qa="motivation-button">
+                                <!----><!---->
+                                <span class="_label_zbos0_27"> Войти </span>
+                            </button>
+                        </div>
+                        <!--]-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
